@@ -1,0 +1,20 @@
+{
+  "*.ts": {
+    "alternate": ["{}.test.ts"],
+    "make": "yarn test:unit {}.test.ts"
+  },
+  "*.test.ts": {
+    "alternate": ["{}.ts"],
+    "make": "yarn test:unit {}.test.ts",
+    "type": "test"
+  },
+  "*.tsx": {
+    "alternate": ["{}.test.tsx"],
+    "make": "yarn test:unit {}.test.tsx"
+  },
+  "*.test.tsx": {
+    "alternate": ["{}.tsx"],
+    "make": "yarn test:unit {}.test.tsx",
+    "type": "test"
+  }
+}

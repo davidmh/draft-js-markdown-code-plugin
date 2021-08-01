@@ -1,0 +1,9 @@
+.DraftEditor-root {
+  border: 1px solid;
+  padding: 4px;
+}
+
+.public-DraftEditor-content[contenteditable='true'] {
+  display: block;
+  min-height: 200px;
+}
