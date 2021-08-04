@@ -3,9 +3,7 @@
   "extends": [
     "standard",
     "standard-react",
-    "plugin:prettier/recommended",
-    "prettier/standard",
-    "prettier/react",
+    "prettier",
     "plugin:@typescript-eslint/eslint-recommended"
   ],
   "env": {
@@ -27,6 +25,7 @@
     "no-unused-vars": 0,
     "space-before-function-paren": 0,
     "react/prop-types": 0,
+    "react/react-in-jsx-scope": "off",
     "react/jsx-handler-names": 0,
     "react/jsx-fragments": 0,
     "react/no-unused-prop-types": 0,
