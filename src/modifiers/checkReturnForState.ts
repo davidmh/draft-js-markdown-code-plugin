@@ -8,7 +8,8 @@ import insertText from './insertText'
 
 export default function checkReturnForState(
   editorState: EditorState,
-  evt?: React.KeyboardEvent<Element>
+  evt?: React.KeyboardEvent<Element>,
+  insertEmptyBlockOnReturnWithModifierKey = true,
 ) {
   let newEditorState = editorState
   const contentState = editorState.getCurrentContent()
@@ -22,7 +23,11 @@ export default function checkReturnForState(
   }
   if (
     newEditorState === editorState &&
-    (evt?.shiftKey ||
+    insertEmptyBlockOnReturnWithModifierKey &&
+    (evt?.ctrlKey ||
+      evt?.shiftKey ||
+      evt?.metaKey ||
+      evt?.altKey  ||
       (/^header-/.test(type) &&
         selection.isCollapsed() &&
         selection.getEndOffset() === text.length))
